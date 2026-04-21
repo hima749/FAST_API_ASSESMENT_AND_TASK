@@ -1,51 +1,70 @@
-fastapi-day2-assignment
-This repository contains the solutions for the FastAPI Day 2 Practice Tasks from the internship training program.
+# FastAPI Product Management System
 
-Project Description
-The assignment demonstrates basic API development using FastAPI, including:
+This project is a RESTful API built using FastAPI for managing products, customer feedback, and bulk orders. It demonstrates backend development concepts including API design, data validation, and business logic implementation.
 
-Creating GET endpoints
-Using query parameters
-Handling path parameters
-Implementing POST requests
-Data validation using Pydantic models
-Business logic implementation for API responses
-Implemented Endpoints
-Filter Products
+## 📌 Features Implemented
 
-Endpoint: /products/filter
-Filters products based on minimum price, maximum price, and category.
-Get Product Price
+### 1. Product Filtering API
 
-Endpoint: /products/{product_id}/price
-Returns only the name and price of a specific product.
-Customer Feedback
+* Filter products based on:
 
-Endpoint: /feedback
-Accepts customer feedback using a POST request with validation.
-Product Summary
+  * Minimum price
+  * Maximum price
+  * Category
 
-Endpoint: /products/summary
-Provides summary statistics such as total products, stock availability, most expensive and cheapest products, and categories.
-Bulk Order Processing
+### 2. Product Price Retrieval
 
-Endpoint: /orders/bulk
-Processes multiple order items, validates product availability, and calculates total cost.
-Technologies Used
-Python
-FastAPI
-Uvicorn
-Pydantic
+* Get the price of a product using product ID
 
-How to Run the Project
-Install dependencies
+### 3. Customer Feedback System
+
+* Submit feedback for products
+* Includes validation for:
+
+  * Name
+  * Rating (1–5)
+  * Optional comments
+
+### 4. Product Summary API
+
+* Total number of products
+* In-stock vs out-of-stock count
+* Most expensive and cheapest product
+* Available categories
+
+### 5. Bulk Order Processing
+
+* Place bulk orders with multiple items
+* Validates stock availability
+* Calculates total cost
+* Handles failed and successful orders
+
+## 🧠 Concepts Used
+
+* FastAPI framework
+* REST API development
+* Pydantic models for data validation
+* Query parameters & path parameters
+* List comprehensions and filtering
+* Business logic implementation
+
+## 📂 File
+
+* `main.py` → contains all API endpoints and logic 
+
+## ▶️ How to Run
+
+```bash
 pip install fastapi uvicorn
-
-Run the server
 uvicorn main:app --reload
+```
 
-Open Swagger UI
+Then open:
+
+```
 http://127.0.0.1:8000/docs
+```
 
-Author
-Himanshu Shekhar Singh
+## 🚀 Outcome
+
+Developed a fully functional API system capable of handling product management, feedback collection, and bulk order processing using FastAPI.
